@@ -1,7 +1,7 @@
 output "role_arn" {
-  value = aws_iam_role.example_role.arn
+  value = aws_iam_role.role.arn
 }
 
 output "policy_arns" {
-  value = aws_iam_policy.example_policies[*].arn
+  value = aws_iam_policy.policies[*].arn
 }
