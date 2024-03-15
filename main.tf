@@ -12,8 +12,8 @@ resource "aws_iam_policy" "policies" {
 }
 
 resource "aws_iam_role_policy_attachment" "role_attachments" {
-  for_each = { for idx, policy in aws_iam_policy.example_policies : idx => policy }
+  for_each = { for idx, policy in aws_iam_policy.policies : idx => policy }
 
-  role       = aws_iam_role.example_role.name
-  policy_arn = aws_iam_policy.example_policies[each.key].arn
+  role       = aws_iam_role.role.name
+  policy_arn = aws_iam_policy.policies[each.key].arn
 }
