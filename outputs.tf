@@ -3,5 +3,7 @@ output "role_arn" {
 }
 
 output "policy_arns" {
-  value = aws_iam_policy.policies[*].arn
+  value = {
+    for name, policy in aws_iam_policy.policies : name => policy.arn
+  }
 }
