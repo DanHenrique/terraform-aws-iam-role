@@ -1,6 +1,7 @@
 resource "aws_iam_role" "role" {
   name               = var.role_name
   assume_role_policy = var.assume_role_policy_document
+  tags               = var.tags
 }
 
 resource "aws_iam_policy" "policies" {
@@ -9,6 +10,7 @@ resource "aws_iam_policy" "policies" {
   name        = each.value.name
   description = each.value.description
   policy      = each.value.document
+  tags        = var.tags
 }
 
 resource "aws_iam_role_policy_attachment" "role_attachments" {

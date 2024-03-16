@@ -16,3 +16,13 @@ variable "policies" {
     document    = string
   }))
 }
+
+variable "tags" {
+  description = "Tags to apply to the resources"
+  type        = map(string)
+  default     = {}
+  validation {
+    condition = contains(keys(var.tags), "git_repository")
+    error_message = "The 'git_repository' tag is mandatory."
+  }
+}

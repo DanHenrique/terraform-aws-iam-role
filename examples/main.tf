@@ -11,4 +11,9 @@ module "iam_role_with_policies" {
     }
     # Adicione mais políticas conforme necessário
   ]
+
+  tags = {
+    creator        = "danhenrique"
+    git_repository = "https://github.com/DanHenrique/terraform-aws-iam-role"
+  }
 }
