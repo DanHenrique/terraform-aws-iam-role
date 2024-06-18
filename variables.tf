@@ -26,3 +26,9 @@ variable "tags" {
     error_message = "The 'git_repository' tag is mandatory."
   }
 }
+
+variable "existing_policy_arns" {
+  description = "A list of ARNs of existing IAM policies to attach to the role"
+  type        = list(string)
+  default     = []
+}
